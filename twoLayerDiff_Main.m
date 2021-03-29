@@ -9,14 +9,14 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Define Constants
-D1 = 0;
-D2 = 0;
+D1 = 2;
+D2 = 1;
 k = sqrt(D1/D2);
 alpha = (1-k)/(1+k);
-C0 = 0;
-L=0;
+C0 = 1;
+L=1;
 
-%% Equation 1
+%% Equations
 
 syms n x t
 
@@ -28,11 +28,6 @@ F1=symsum(alpha^n*(erfc(((((2*n)+1)*L)+x)/(2*sqrt(D1*t)))-alpha*...
     erfc(((((2*n)+1)*L)-x)/(2*sqrt(D1*t)))),n,0,Inf);
 
 C1=C0*F1;
-
-%% Equation 2
-
-
-syms n x t
 
 %((((2*n)+1)*L)+(k*x))
 %(2*sqrt(D1*t))
